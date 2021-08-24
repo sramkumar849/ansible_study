@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update the yum cache
+    yum:
+      update_cache: true
+      state: present
+
+  - name: install_mariadb package
+    yum:
+      name: mariadb
+      state: latest
